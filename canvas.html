@@ -1,0 +1,218 @@
+<html>
+<head>
+    <title>Canvas Project</title>
+
+    <style type="text/css">
+
+
+        body {
+            font-family:Arial, sans-serif;
+            margin: 30px auto;
+            background: url(images/grey_wash_wall.png);
+        }
+
+        #page{
+
+            width:960px;
+            background-color:#FFF;
+            padding:20px;
+            margin:0 auto;
+        }
+        
+        canvas {
+            border: 1px solid #CCC;
+            margin:0 auto;
+            }
+
+
+    </style>
+
+</head>
+<body onload="draw();">
+
+    <div id="page">
+
+        <h2 style="text-align:center">
+
+            Dwijesh's Canvas Experiment
+
+        </h2>
+        <address style="text-align:center">
+            <a href="mailto:dwijesh_n@hotmail.com">dwijesh_n@hotmail.com</a>
+        </address>
+
+        <p style="text-align:center;"><canvas id="mycanvas" width="800" height="600"></canvas></p>
+
+    </div>
+    <script type="text/javascript">
+        function draw() {
+
+            var canvas = document.getElementById('mycanvas');
+            
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+            }
+           
+              
+            // house
+
+            ctx.fillStyle = "#FFC62C";    // 1st rect            
+            ctx.fillRect(100, 480, 150, 100);     
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(100, 480, 150, 100);
+
+
+            ctx.fillStyle = "#B06600";    // door          
+            ctx.fillRect(165, 530, 20, 50);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(165, 530, 20, 50);
+
+            
+            ctx.fillStyle = "#009BDE";    // square window       
+            ctx.fillRect(202, 490, 30, 30);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(202, 490, 30, 30);
+
+            ctx.beginPath();  
+            ctx.moveTo(202, 490);
+            ctx.lineTo(232, 520);            
+            ctx.closePath();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(232, 490);
+            ctx.lineTo(202, 520);
+            ctx.closePath();
+            ctx.stroke();
+
+
+            ctx.fillStyle = "#BD2B09";   // 2nd rect  
+            ctx.fillRect(90, 470, 170, 10);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(90, 470, 170, 10);
+
+
+            ctx.fillStyle = "#FFC62C";    // 3rd rect 
+            ctx.fillRect(100, 370, 150, 100);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(100, 370, 150, 100);
+
+
+
+            ctx.beginPath();    //circle1
+            ctx.arc(135, 390, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "#009BDE";
+            ctx.fill();
+            ctx.strokeStyle = "#000000";
+            ctx.stroke();
+
+            ctx.beginPath();    //circle2
+            ctx.arc(215, 390, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "#009BDE";
+            ctx.fill();
+            ctx.strokeStyle = "#000000";
+            ctx.stroke();
+
+
+            ctx.fillStyle = "rgba(0,0,0,0)";  // balcony
+            ctx.fillRect(90, 440, 170, 30);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(90, 440, 170, 30);
+
+            ctx.fillStyle = "rgba(200,0,0,1)"; 
+            ctx.fillRect(110, 440, 15, 30);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(110, 440, 15, 30);
+
+            ctx.fillStyle = "rgba(200,0,0,1)";
+            ctx.fillRect(150, 440, 15, 30);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(150, 440, 15, 30);
+
+            ctx.fillStyle = "rgba(200,0,0,1)";
+            ctx.fillRect(190, 440, 15, 30);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(190, 440, 15, 30);
+
+            ctx.fillStyle = "rgba(200,0,0,1)";
+            ctx.fillRect(230, 440, 15, 30);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(230, 440, 15, 30);   
+
+
+            ctx.fillStyle = "#BD2B09";   // 4th rect  
+            ctx.fillRect(90, 360, 170, 10);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(90, 360, 170, 10);
+
+            ctx.fillStyle = "#943600";   // chimney  
+            ctx.fillRect(210, 260, 20, 75);
+            ctx.strokeStyle = "#000000";
+            ctx.strokeRect(210, 260, 20, 75);
+
+            ctx.beginPath();  // triangle
+            ctx.moveTo(100, 360);
+            ctx.lineTo(175, 260);
+            ctx.lineTo(250, 360);
+            ctx.closePath();
+            ctx.stroke();
+            var grd = ctx.createLinearGradient(175, 360, 175, 260);
+            grd.addColorStop(0, "#0B1EDE");
+            grd.addColorStop(1, "#FFFFFF");
+            ctx.fillStyle = grd;
+            ctx.fill();
+
+
+
+            // tree
+
+            ctx.beginPath();    // leaves
+            ctx.moveTo(500, 360);
+            ctx.bezierCurveTo(500, 335, 550, 335, 550, 360);
+            ctx.bezierCurveTo(600, 390, 620, 390, 620, 420);
+            ctx.bezierCurveTo(650, 450, 650, 480, 620, 500);
+            ctx.bezierCurveTo(570, 510, 530, 510, 500, 500);
+            ctx.bezierCurveTo(450, 480, 400, 450, 430, 430);
+            ctx.bezierCurveTo(400, 400, 450, 300, 500, 360);
+
+            ctx.closePath();
+            ctx.lineWidth = 5;
+            ctx.fillStyle = '#27FF19';
+            ctx.fill();
+            ctx.strokeStyle = '#044C00';
+            ctx.stroke();
+
+
+
+            ctx.fillStyle = "#943600";    // trunk       
+            ctx.fillRect(500, 430, 20, 150);
+
+
+            var rectWidth = 70;     // branches
+            var rectHeight = 10;
+
+            ctx.save();
+
+            ctx.fillStyle = "#943600";  
+            ctx.translate(480, 410);
+            ctx.rotate(45 * Math.PI / 180);            
+            ctx.fillRect(rectWidth / -2, rectHeight / -2, rectWidth, rectHeight);
+
+            ctx.restore();
+            ctx.save();
+
+            ctx.fillStyle = "#943600";
+            ctx.translate(540, 410);
+            ctx.rotate(135 * Math.PI / 180);
+            ctx.fillRect(rectWidth / -2, rectHeight / -2, rectWidth, rectHeight);
+
+            ctx.restore();
+
+
+
+
+        }
+    </script>
+
+</body>
+</html>
